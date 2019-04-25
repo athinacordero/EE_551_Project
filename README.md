@@ -64,19 +64,7 @@ The LASSO Regression Model with SKLearn gave me a score of 0.4611 on Kaggle, not
 The first Keras Regression model (abbreviated KR for this description) is a neural network with two layers. This yielded me a score of 0.207 on Kaggle. The second, and best KR model I created, is a neural network with three layers. The following is a description of the model:
 
 
-#### Layer (type)           |       Output Shape         |          Param  
-_________________________________________________________________
-dense_6 (Dense)      |        (None, 135)     |          36585     
-_________________________________________________________________
-dense_7 (Dense)              (None, 135)               18360     
-_________________________________________________________________
-dense_8 (Dense)              (None, 1)                 136       
-_________________________________________________________________
-
-Total params: 55,081
-Trainable params: 55,081
-Non-trainable params: 0
-_________________________________________________________________
+![Alt text](model_plot.png?raw=true "Keras Model Visualization")
 
 
 
