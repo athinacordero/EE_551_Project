@@ -53,14 +53,15 @@ The Ames Housing dataset was compiled by Dean De Cock for use in data science ed
 ## Results
 
 ### 1. Simple Linear Regression Model with SKLearn
-A Linear Regression Model is...
+Linear regression is a statistical model that estimates a scalar response based on one or more explanatory variables. 
 The simple Linear Model with SKLearn gave me a score of 0.4639 on Kaggle.
 
 ### 2. LASSO Regression Model with SKLearn
-A LASSO Regression Model is different than regular Linear Regression because...
+Lasso regression is a statistical model that performs variable selection and regularization to improve upon a linear model.
 The LASSO Regression Model with SKLearn gave me a score of 0.4611 on Kaggle, not a big improvement.
 
 ### 3. Keras Regressor (Wrapper for SKLearn)
+Deep learning is a machine learning method using a network of neurons to teach a model. Rather than just one estimation made by a statistical model, a deep learning model has several layers of estimation.
 The first Keras Regression model (abbreviated KR for this description) is a neural network with two layers. This yielded me a score of 0.207 on Kaggle. The second, and best KR model I created, is a neural network with three layers. The following is a description of the model:
 
 
