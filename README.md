@@ -1,21 +1,78 @@
 # EE_551_Project
 EE 551 Final Project
 
+
+
+### Dependences
+- SKLearn
+- Pandas
+- Numpy
+- Keras
+    - Tensorflow Backend
+
+
+
 ## Purpose:
-- Two Sigma: Using News to Predict Stock Movements
+- House Prices: Advanced Regression Techniques
 - Will participate in the following challenge:
-    - Can we use the content of news analytics to predict stock price performance? The ubiquity of data today enables investors at any scale to make better investment decisions. The challenge is ingesting and interpreting the data to determine which data is useful, finding the signal in this sea of information. Two Sigma is passionate about this challenge and is excited to share it with the Kaggle community.
+##### Description 
+Ask a home buyer to describe their dream house, and they probably won't begin with the height of the basement ceiling or the proximity to an east-west railroad. But this playground competition's dataset proves that much more influences price negotiations than the number of bedrooms or a white-picket fence.
 
-    As a scientifically driven investment manager, Two Sigma has been applying technology and data science to financial forecasts for over 17 years. Their pioneering advances in big data, AI, and machine learning have pushed the investment industry forward. Now, they're eager to engage with Kagglers in this continuing pursuit of innovation.
+With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of each home.
 
-    By analyzing news data to predict stock prices, Kagglers have a unique opportunity to advance the state of research in understanding the predictive power of the news. This power, if harnessed, could help predict financial outcomes and generate significant economic impact all over the world.
+##### Goal
 
-    Data for this competition comes from the following sources:
+It is your job to predict the sales price for each house. For each Id in the test set, you must predict the value of the SalePrice variable. 
 
-        Market data provided by Intrinio.
-        News data provided by Thomson Reuters. Copyright ©, Thomson Reuters, 2017. All Rights Reserved. Use, duplication, or sale of this service, or data contained herein, except as described in the Competition Rules, is strictly prohibited.
+##### Metric
 
-TODO:
-- Natural Language Processing Model
-- Front-end UI for application to view day-to-day stock analysis
-- Sentiment Analysis
+Submissions are evaluated on Root-Mean-Squared-Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sales price. (Taking logs means that errors in predicting expensive houses and cheap houses will affect the result equally.)
+ 
+##### Data for this competition comes from the following sources:
+        
+The Ames Housing dataset was compiled by Dean De Cock for use in data science education. It's an incredible alternative for data scientists looking for a modernized and expanded version of the often cited Boston Housing dataset. 
+
+
+
+## Steps taken in Project:
+- Unpack Data
+- Prepare data for multivariate models 
+    - Remove categorical categories and replace with one-hot encoded categories
+    - Fill all 'NaN' entries with the average from that column (In an ideal situation, this would not have an effect on the model)
+- Create train and test variables
+    - Kaggle provides all train variables
+    - Kaggle does not provide the test output to keep competitors honest
+- Run models
+    - 3 different models were used:
+        1. Simple Linear Model (SKLearn)
+        2. Least Absolute Shrinkage Selector Operator (LASSO) Regression (SKLearn)
+        3. Keras Regressor (Wrapper for SKLearn)
+        
+## Results
+### 1. Simple Linear Regression Model with SKLearn
+A Linear Regression Model is...
+The simple Linear Model with SKLearn gave me a score of 0.4639 on Kaggle.
+
+### 2. LASSO Regression Model with SKLearn
+A LASSO Regression Model is different than regular Linear Regression because...
+The LASSO Regression Model with SKLearn gave me a score of 0.4611 on Kaggle, not a big improvement.
+
+### 3. Keras Regressor (Wrapper for SKLearn)
+The first Keras Regression model (abbreviated KR for this description) is a neural network with two layers. This yielded me a score of 0.207 on Kaggle. The second, and best KR model I created, is a neural network with three layers. The following is a description of the model:
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_6 (Dense)              (None, 135)               36585     
+_________________________________________________________________
+dense_7 (Dense)              (None, 135)               18360     
+_________________________________________________________________
+dense_8 (Dense)              (None, 1)                 136       
+=================================================================
+Total params: 55,081
+Trainable params: 55,081
+Non-trainable params: 0
+_________________________________________________________________
+
+
+
